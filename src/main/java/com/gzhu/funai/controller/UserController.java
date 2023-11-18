@@ -83,7 +83,7 @@ public class UserController {
      */
     @PostMapping("/register")
     public ReturnResult register(@Valid @RequestBody UserRegisterRequest req, HttpServletRequest request) {
-        // 先校验验证码
+/*        // 先校验验证码
         String redisCode = stringRedisTemplate.opsForValue().get(
                 String.format(RedisKeys.USER_REGISTER_CODE, req.getPhone()));
 
@@ -96,7 +96,7 @@ public class UserController {
         }
 
         // 删除验证码
-        stringRedisTemplate.delete(String.format(RedisKeys.USER_REGISTER_CODE ,req.getPhone()));
+        stringRedisTemplate.delete(String.format(RedisKeys.USER_REGISTER_CODE ,req.getPhone()));*/
 
         //验证码通过，真正注册
         UserEntity register = userService.register(req);
