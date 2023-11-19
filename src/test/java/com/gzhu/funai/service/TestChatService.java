@@ -40,6 +40,7 @@ public class TestChatService {
 
     @Test
     public void chatOneShot(){
+        String apiKey = "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";
 
         System.out.println("正在加载apiKey...");
         adminApiKeyService.load();
@@ -51,6 +52,8 @@ public class TestChatService {
                 .build();
         ChatGPTResp resp = chatService.oneShotChat("", chatGPTReq,
                 adminApiKeyService.roundRobinGetByType(ApiType.OPENAI));
+//        ChatGPTResp resp = chatService.oneShotChat("", chatGPTReq,
+//                apiKey);
         System.out.println(resp.getMessage());
     }
 
